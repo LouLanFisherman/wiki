@@ -147,24 +147,18 @@
         $links.each(function() {
             var $link = $(this);
             
-            // 避免重复初始化
-            if ($('#md-jvcore-checkin').length === 0) {
-                // 创建并显示签到组件
-                createAndDisplayCheckinComponent();
-            }
-            
-            // 隐藏原始链接
-            $link.hide();
+            // 创建并显示签到组件，替换链接位置
+            createAndDisplayCheckinComponent($link);
         });
     }
 
     // 创建并显示签到组件
-    function createAndDisplayCheckinComponent() {
+    function createAndDisplayCheckinComponent($link) {
         // 创建组件
         const $component = createCheckinComponent();
         
-        // 插入到页面中
-        $('body').append($component);
+        // 替换链接位置，而不是添加到页面底部
+        $link.replaceWith($component);
         
         // 添加样式
         addCheckinStyles();
@@ -179,7 +173,7 @@
     // 创建签到组件HTML
     function createCheckinComponent() {
         return $(`
-            <div id="md-jvcore-checkin" class="md-jvcore-checkin" style="margin: 20px 0;">
+            <div id="md-jvcore-checkin" class="md-jvcore-checkin">
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white">
                         <h5 class="mb-0">JVCore 签到系统</h5>
@@ -228,6 +222,18 @@
 
         const styles = `
             <style id="md-jvcore-checkin-styles">
+                /* 签到组件容器样式 - 跟随上下文宽度 */
+                #md-jvcore-checkin {
+                    margin: 20px 0;
+                    width: 100%;
+                    max-width: 600px; /* 限制最大宽度 */
+                }
+                
+                /* 卡片跟随容器宽度 */
+                #md-jvcore-checkin .card {
+                    width: 100%;
+                }
+                
                 /* Core ID卡片样式 */
                 .core-id-card {
                     border: 1px solid #dee2e6;
@@ -235,6 +241,7 @@
                     padding: 12px;
                     margin-bottom: 10px;
                     background: white;
+                    width: 100%;
                 }
                 
                 .core-id-header {
@@ -278,6 +285,7 @@
                     font-size: 0.8rem;
                     color: #6c757d;
                     margin-bottom: 4px;
+                    word-break: break-word;
                 }
                 
                 .month-status {
@@ -321,8 +329,19 @@
                     height: 2rem;
                 }
                 
+                /* 钱包地址显示 */
+                #jvcore-wallet-address {
+                    word-break: break-all;
+                    display: inline-block;
+                    max-width: 100%;
+                }
+                
                 /* 响应式调整 */
                 @media (max-width: 768px) {
+                    #md-jvcore-checkin {
+                        max-width: 100%; /* 在小屏幕上使用全宽 */
+                    }
+                    
                     .core-id-header {
                         flex-direction: column;
                         align-items: flex-start;
@@ -330,6 +349,21 @@
                     
                     .core-id-status {
                         margin-top: 4px;
+                    }
+                }
+                
+                /* 非常小的屏幕 */
+                @media (max-width: 480px) {
+                    #md-jvcore-checkin .card-body {
+                        padding: 12px;
+                    }
+                    
+                    .core-id-card {
+                        padding: 10px;
+                    }
+                    
+                    .checkin-button {
+                        width: 100%;
                     }
                 }
             </style>

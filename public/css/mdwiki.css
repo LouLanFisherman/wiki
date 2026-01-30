@@ -70,3 +70,11 @@
 	font-size: smaller;
 	padding: 1em;
 }
+
+.navbar {
+  padding: 0 24px !important;
+}
+
+.nav {
+  float: right !important;
+}

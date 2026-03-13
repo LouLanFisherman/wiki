@@ -1,5 +1,9 @@
 # 《PixelArtNFT使用说明》
 
+## 简介：PixelArtNFT是在Jouleverse链上，可以自由创作NFT图像的工具，您可以自由创作、铸造专属于自己的NFT图像。最终，NFT将会在链上永久保存。每个NFT只有10000个名额，先到先得！
+
+## 使用说明
+
 1.找一个带有MetaMask的浏览器，然后打开，输入https://pixelart.f7t.cn ，进入像素绘图页面。
 
 <img width="634" height="443" alt="80a097ca-7341-48d2-90d3-b64c3c7e719a" src="https://github.com/user-attachments/assets/81a2c711-8656-47cb-9ef7-57de4e7dc02b" />
@@ -65,7 +69,7 @@
 
 如果不满意这个作品，可以点击“销毁”按钮（BURN），然后作品就会被销毁，同时编号被释放。
 
-如果很是满意，可以点击“定稿”按钮（FINALIZED），然后作品会进入“已定稿”状态，这时您便无法进行销毁，同时会传输到admin进行审核。
+如果很是满意，可以点击“定稿”按钮（FINALIZE），然后作品会进入“已定稿”状态，这时您便无法进行销毁，同时会传输到admin进行审核。
 
 <img width="255" height="97" alt="image" src="https://github.com/user-attachments/assets/e3caecfa-673d-4785-825c-39cb82b89525" />
 
@@ -93,15 +97,17 @@
 <img width="475" height="156" alt="image" src="https://github.com/user-attachments/assets/9fc09ad9-0f64-4852-94a6-8dcdf4f4dbec" />
 
 
-每个NFT均有自己的比编号、边框与EMOJI，这可以反应NFT状态
+每个NFT均有自己的编号、边框与EMOJI，这可以反映NFT状态
 
 已经封存：绿框+锁
 
-已定稿：黄框+纸和笔
+已定稿：黄框+纸笔
 
 草稿：灰框+铅笔
 
-已经封存的NFT会显示持有者地址。仅拥有10000个封存NFT。
+已经封存的NFT会显示持有者地址。仅拥有10000NFT编号，每个NFT（任何状态）均会占据一个编号。
+
+祝您在NFT世界中创作愉快！
 
 ----
-作者：Jn
+**作者：Jn**
